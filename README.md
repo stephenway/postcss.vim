@@ -3,4 +3,4 @@
 ## Installation
 
 * **Manually** copy `postcss.vim` file into your `~/.vim/syntax/` directory
-* **Vundle** you can add this line to your `~/.vimrc` file -> `Plugin 'JulesWang/css.vim'` then run `:PluginInstall!` in vim.
+* **Vundle** you can add this line to your `~/.vimrc` file -> `Plugin 'stephenway/postcss.vim'` then run `:PluginInstall!` in vim.
