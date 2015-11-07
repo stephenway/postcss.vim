@@ -4,9 +4,10 @@
 "               Claudio Fleiner <claudio@fleiner.com> (Maintainer)
 "               Yeti            (Add full CSS2, HTML4 support)
 "               Nikolai Weibull (Add CSS2 support)
-" Maintainer:   Jules Wang      <w.jq0722@gmail.com>
-" URL:          https://github.com/JulesWang/css.vim
-" Last Change:  2015 Aug.25
+"               Jules Wang      <w.jq0722@gmail.com>
+" Maintainer:   Stephen Way     <stephen@stephenway.net>
+" URL:          https://github.com/stephenway/postcss.vim
+" Last Change:  2015 Nov.06
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
