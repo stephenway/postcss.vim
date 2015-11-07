@@ -63,7 +63,7 @@ syn match cssClassName "\.[A-Za-z][A-Za-z0-9_-]\+" contains=cssClassNameDot
 syn match cssClassNameDot contained '\.'
 
 try
-syn match cssIdentifier "#[A-Za-zÀ-ÿ_@][A-Za-zÀ-ÿ0-9_@-]*"
+syn match cssIdentifier "#[A-Za-zÃ€-Ã¿_@][A-Za-zÃ€-Ã¿0-9_@-]*"
 catch /^.*/
 syn match cssIdentifier "#[A-Za-z_@][A-Za-z0-9_@-]*"
 endtry
@@ -476,9 +476,19 @@ syn match cssAttrComma ","
 syn match cssPseudoClass ":[A-Za-z0-9_-]*" contains=cssNoise,cssPseudoClassId,cssUnicodeEscape,cssVendor,cssPseudoClassFn
 syn keyword cssPseudoClassId contained link visited active hover before after left right
 syn keyword cssPseudoClassId contained root empty target enable disabled checked invalid
+syn keyword cssPseudoClassId contained valid scope contained current past future default
+syn keyword cssPseudoClassId contained required optional blank
 syn match cssPseudoClassId contained "\<first-\(line\|letter\)\>"
 syn match cssPseudoClassId contained "\<\(first\|last\|only\)-\(of-type\|child\)\>"
+syn match cssPseudoClassId contained "\<\(any\|local\)-link\>"
+syn match cssPseudoClassId contained "\<\(read-\(only\)|write\)\>"
+syn match cssPseudoClassId contained "\<placeholder-shown\>"
+syn match cssPseudoClassId contained "\<\(in\|out-of\)-range\>"
+syn match cssPseudoClassId contained "\<user-error\>"
+syn match cssPseudoClassId contained "\<\(active\|valid\|invalid\)-drop-target\>"
 syn region cssPseudoClassFn contained matchgroup=cssFunctionName start="\<\(not\|lang\|\(nth\|nth-last\)-\(of-type\|child\)\)(" end=")"
+syn region cssPseudoClassLang matchgroup=cssPseudoClassId start=":\(matches\|dir\|local-link\|current\|nth\(-last\)\=-\(match\|column\)\|column\)(" end=")" oneline
+
 " ------------------------------------
 " Vendor specific properties
 syn match cssPseudoClassId contained  "\<selection\>"
@@ -516,6 +526,10 @@ syn region cssAttrRegion start=/:/ end=/\ze\(;\|)\|}\)/ contained contains=css.*
 " Hack for transition
 " 'transition' has Props after ':'.
 syn region cssAttrRegion start=/transition\s*:/ end=/\ze\(;\|)\|}\)/ contained contains=css.*Prop,css.*Attr,cssColor,cssImportant,cssValue.*,cssFunction,cssString.*,cssURL,cssComment,cssUnicodeEscape,cssVendor,cssError,cssAttrComma,cssNoise
+
+" Variables
+syn match cssFontProp contained "\<var-[A-Za-z_][A-Za-z0-9_-]\+\>"
+syn region cssFunction contained matchgroup=cssFunctionName start="\<var\s*(" end=")" oneline keepend
 
 
 if main_syntax == "css"
@@ -668,4 +682,3 @@ endif
 let &cpo = s:cpo_save
 unlet s:cpo_save
 " vim: ts=8
-
