@@ -1,3 +1,7 @@
+**Please note this is a work in progress and it's not full featured as of yet. Check back soon!**
+
+---
+
 # PostCSS Syntax for Vim
 
 ## Installation
