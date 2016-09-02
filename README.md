@@ -1,4 +1,4 @@
-**Please note this is a work in progress and it's not full featured as of yet. Check back soon!**
+**Please note this was a work in progress and it's not full featured as of yet. Development has halted at this time.**
 
 ---
 
